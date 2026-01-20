@@ -1,0 +1,61 @@
+body {
+    background-color:black;
+}
+
+/* styl headeru */
+header {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    
+}
+
+/* styl mainu */
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-image:url('./img/back.avif');
+
+
+}
+
+h1 {
+    background-color: black;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 50px;
+    margin: 0px;
+    padding: 20px;
+}
+
+/* style herni plochy */
+canvas {
+    margin: 10px;
+    align-self: center;
+    border: 10px solid white;
+   ;
+}
+
+#game-space {
+    align-self: center;
+}
+
+/* styl tlacitek */ 
+#buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;         
+    margin: 20px;
+    width: auto;        
+    flex-wrap: wrap;  
+}
+
+button {
+    padding: 10px 18px;    
+    font-size: 16px;      
+    min-width: 110px;       
+    flex: 0 0 auto; 
+    color:black;
+}
