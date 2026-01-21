@@ -1,14 +1,16 @@
 class Square {
-    constructor(x, y, size) {
+    constructor(x, y, size, img) {
         this.x = x;
         this.y = y;
         this.size = size;
         this.speed = 1;
         this.hit = false;
         this.coins = 20;
+        this.img = img;
     }
 
     update() {
+        // pohyb k vezi
         const dx = tower.x - this.x;
         const dy = tower.y - this.y;
 
@@ -17,15 +19,21 @@ class Square {
         this.x += (dx / len) * this.speed;
         this.y += (dy / len) * this.speed;
 
+        // kontrola kolize s vezi
         if (collideRectRect(
             this.x - this.size / 2, this.y - this.size / 2, this.size, this.size,
             tower.x - tower.size / 2, tower.y - tower.size / 2, tower.size, tower.size
         )) {
+            tower.hp = max(0, tower.hp - 15);
             this.hit = true;
         }
     }
+
+    // vykresleni ctverce
     draw() {
-        fill(255, 144, 12);
+        image(this.img, this.x, this.y, 100, 100);
+        noStroke();
+        noFill();
         square(this.x, this.y, this.size);
     }
 }
